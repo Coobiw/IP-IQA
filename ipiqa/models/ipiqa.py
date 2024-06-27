@@ -25,13 +25,14 @@ class IPIQA(BaseModel):
                 qa_token=False,
         ):
         super().__init__()
-        self.resnet50 = clip.load(base_ckpt, device="cpu")[0].visual
+        clip_ckpt = clip.load(base_ckpt, device="cpu")[0]
+        self.resnet50 = clip_ckpt.visual
 
-        self.txt_model = clip.load(base_ckpt, device="cpu")[0].transformer
-        self.wte = clip.load(base_ckpt, device="cpu")[0].token_embedding
-        self.ln_final = clip.load(base_ckpt, device="cpu")[0].ln_final
-        self.txt_pos = clip.load(base_ckpt, device="cpu")[0].positional_embedding
-        self.text_projection = clip.load(base_ckpt, device="cpu")[0].text_projection
+        self.txt_model = clip_ckpt.transformer
+        self.wte = clip_ckpt.token_embedding
+        self.ln_final = clip_ckpt.ln_final
+        self.txt_pos = clip_ckpt.positional_embedding
+        self.text_projection = clip_ckpt.text_projection
 
         self.dtype = self.resnet50.conv1.weight.dtype
 

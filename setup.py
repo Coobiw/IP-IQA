@@ -15,7 +15,7 @@ setup(
     name="ipiqa",
     version="1.0.0",
     author="Bowen Qu",
-    description="Code for IPIQA - BRINGING TEXTUAL PROMPT TO AI-GENERATED IMAGE QUALITY ASSESSMENT (ICME2024)",
+    description="Code for IPIQA - BRINGING TEXTUAL PROMPT TO AI-GENERATED IMAGE QUALITY ASSESSMENT (ICME2024, url: https://arxiv.org/abs/2403.18714)",
     keywords="AI-Generated Images(AGIs), Image Quality Assessment (IQA), AI-Generated Image Quality Assessment (AGIQA), Multimodal Learning, Deep Learning, Library, PyTorch",
     license="3-Clause BSD",
     packages=find_namespace_packages(include="ipiqa.*"),
