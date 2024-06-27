@@ -7,3 +7,10 @@
 
 *Code is scheduled for release in June.*
 
+## Installation
+You can use `conda` to configure the virtual environment with only three lines of commands. As following:
+```
+conda create -n ipiqa python=3.9
+conda activate ipiqa
+pip install -e .
+```

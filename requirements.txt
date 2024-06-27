@@ -1,0 +1,23 @@
+contexttimer
+decord
+regex # for clip tokenizer
+ftfy
+iopath
+ipython
+omegaconf
+opencv-python-headless==4.5.5.64
+packaging
+pandas
+openpyxl # for load .xlsx data
+plotly
+pre-commit
+python-magic
+scikit-image
+sentencepiece
+spacy
+streamlit
+timm==0.4.12
+torch==2.0.1
+torchvision==0.15.2
+tqdm
+wheel
