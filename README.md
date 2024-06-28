@@ -13,6 +13,7 @@
 
 > [**TriVQA**](https://github.com/Coobiw/TriVQA) <br>
 > CVPRW2024, the 3rd-place winner of the [NTIRE 2024 Quality Assessment for AI-Generated Content - Track 2 Video](https://codalab.lisn.upsaclay.fr/competitions/17621#learn_the_details). <br>
+> <br>
 > [**MPP-Qwen-Next**](https://github.com/Coobiw/MiniGPT4Qwen) <br>
 > My personal project, about traing 8B/14B MLLM on RTX 3090/4090 24GB by DeepSpeed Pipeline Parallel. Support {image/video/multi-image} input.<br>
 > </p></details>
