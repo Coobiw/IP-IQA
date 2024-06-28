@@ -123,12 +123,21 @@ class IPIQA(BaseModel):
         input_resolution = cfg.get("input_resolution",512)
         output_dim = cfg.get("output_dim",None)
         freeze_text = cfg.get("freeze_text",True)
-        unfreeze_wte = cfg.get("unfreeze_wte",False)
+        qa_token = cfg.get("qa_token",False)
         head_scale = cfg.get('head_scale',None)
         use_mlp_head = cfg.get('use_mlp_head',False)
         dropout_rate = cfg.get('dropout_rate',0.)
 
-        model = cls(base_ckpt,input_resolution,output_dim,use_mlp_head,dropout_rate,freeze_text,head_scale,unfreeze_wte)
+        model = cls(
+                base_ckpt=base_ckpt,
+                input_resolution=input_resolution,
+                output_dim=output_dim,
+                use_mlp_head=use_mlp_head,
+                dropout_rate=dropout_rate,
+                freeze_text=freeze_text,
+                head_scale=head_scale,
+                qa_token=qa_token
+            )
 
         load_finetuned = cfg.get("load_finetuned",False)  # you've loaded the clip weight in `__init__` func
         if load_finetuned:
