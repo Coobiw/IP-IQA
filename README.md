@@ -5,6 +5,16 @@
 
 ![](assets/poster.png)
 
+<br>
+
+<details open><summary>💡 I also have other project that may interest you ✨. </summary><p>
+<!--  may -->
+
+
+> [**TriVQA**](https://github.com/Coobiw/TriVQA) <br>
+> CVPRW2024, the 3rd-place winner of the [NTIRE 2024 Quality Assessment for AI-Generated Content - Track 2 Video](https://codalab.lisn.upsaclay.fr/competitions/17621#learn_the_details). <br>
+> </p></details>
+
 
 ## Installation
 You can use `conda` to configure the virtual environment with only three lines of commands. As following:
