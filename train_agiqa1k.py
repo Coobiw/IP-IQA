@@ -108,11 +108,7 @@ def get_datasets(config,transforms) -> dict:
     vis_root = dataset_cfg.vis_root
     data_info = pd.read_excel(data_info)
 
-    # train_info = data_info.sample(frac=0.8,axis=0)
-    # val_info = data_info[~data_info.index.isin(train_info.index)]
-
     train_info, val_info = agiqa1k_split_fn(data_info)
-    # train_info, val_info = split_3k(data_info)
 
 
     datasets["train"] = AGIQA1k(train_info,transforms['train'],vis_root)
