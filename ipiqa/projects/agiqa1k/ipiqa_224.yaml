@@ -1,0 +1,60 @@
+model:
+  arch: "ipiqa"
+  base_ckpt: cache/ckpt/clip/openai/resnet/RN50.pt
+  input_resolution: 224
+  output_dim: 1
+  load_finetuned: False
+  head_scale: 10.
+  use_mlp_head: True
+  dropout_rate: 0.5
+  freeze_text: True
+  qa_token: True
+
+dataset:
+  data_path: "cache/data/aigc_QA_data1/AGIQA-1k-Database-main/AIGC_MOS_Zscore.xlsx"
+  vis_root: "cache/data/aigc_QA_data1/images"
+  transform_train:
+    name: "image_train_processor"
+    cfg:
+      image_size: 224
+  transform_val:
+    name: "image_eval_processor"
+    cfg:
+      image_size: 224
+
+run:
+  task: "agiqa"
+  resume_ckpt_path: null
+
+  # scheduler
+  lr_sched: "constant_lr"
+  lr_decay_rate: null # `cosine` doesn't need it，but `step_lr` needs.
+  warmup_lr: -1
+  warmup_steps: 0
+  min_lr: 1e-5
+
+  # optimizer
+  init_lr: 1e-5
+  lr_layer_decay: 1
+  weight_decay: 0
+  beta2: 0.999
+
+  # hparams
+  batch_size: 32
+  batch_size_val: 32
+  num_worker: 8
+  max_epoch: 100
+  log_freq: 50
+  accum_grad_iters: 1
+  grad_norm_clip: null
+
+  output_dir: "output/agiqa1k/ipiqa_224"
+
+  evaluate: False
+  eval_freq: 1
+  save_freq: 100
+
+  amp: False
+  device: "cuda"
+  distributed: True
+  dist_url: "env://"
